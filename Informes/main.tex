@@ -1,0 +1,475 @@
+\documentclass[letterpaper, 12pt, twoside]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\setmainfont{Arial Narrow}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\setlength{\headheight}{14.5pt}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{tikzpagenodes}
+\usepackage{xcolor}
+\definecolor{AzulTexto}{RGB}{0, 32, 96}
+\definecolor{AzulAcento}{RGB}{0, 167, 229}
+\definecolor{Gris}{RGB}{128, 128, 128}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\usepackage{setspace}
+
+\fancyhf{} % Pone en blanco el encabezado y pie de página
+
+\fancyhead[E]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      inner sep=0pt,outer sep=0pt,anchor=north west
+    ] at (current page.north west) {
+      \includegraphics[width=\paperwidth]{topeven.png}
+    };
+  \end{tikzpicture}
+}
+\fancyhead[O]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      inner sep=0pt,outer sep=0pt,anchor=north west
+    ] at (current page.north west) {
+      \includegraphics[width=\paperwidth]{topodd.png}
+    };
+  \end{tikzpicture}
+}
+
+\fancyfoot[RO]{
+  {\footnotesize
+    {\color{AzulAcento} CANASTA BÁSICA ALIMENTARIA}
+    {\color{Gris} | Actualización metodológica 2024}
+  } \quad \thepage
+}
+\fancyfoot[LE]{
+  \thepage \quad
+  {\footnotesize
+    {\color{AzulAcento} CANASTA BÁSICA ALIMENTARIA}
+    {\color{Gris} | Actualización metodológica 2024}
+  }
+}
+
+% MÁRGENES
+\marginsize{80pt}%izquierda
+{80pt} %derecha
+{45pt} %arriba
+{40pt} %abajo
+
+% Sin sangría
+\setlength{\parindent}{0pt}
+
+%Esto evita que las palabras se dividan con guión.
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\input{macros}
+
+\begin{document}
+\includepdf[
+  pagecommand={
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]
+      \node at ([yshift=1cm, xshift=-3cm] current page) {
+        \color{white}{\Huge Canasta Básica Alimentaria}
+      };
+      \node at ([yshift=-1cm, xshift=-3cm] current page) {
+        \color{white}{\Huge \textbf{\Mes\ \anio}}
+      };
+      \node at ([yshift=-12cm] current page) {
+        \color{white}{\Large Guatemala, \mespub\ de \aniopub }
+      };
+    \end{tikzpicture}
+  }
+]{./portada.pdf}
+\addtocounter{page}{-1}
+\color{AzulTexto}
+\;
+\\[3\baselineskip]
+\section*{Introducción}
+\;
+\\[3\baselineskip]
+El Instituto Nacional de Estadística (INE), a través de este documento presenta
+los resultados de la Canasta Básica Alimentaria Urbana (CBAU) y Canasta Básica
+Alimentaria Rural (CBAR) y su costo de adquisición mensual per cápita, tanto
+por grupo alimenticio como por producto.
+\\[2\baselineskip]
+El costo de adquisición de la CBAU per cápita mensual a \mes del \anio\ fue de
+Q.\CBAU\ y de la CBAR fue de Q.\CBAR .
+\\[\baselineskip]
+El costo de adquisición de la Canasta Ampliada Urbana (CAU) per cápita mensual a
+\mes\ del \anio\ fue de Q.\CAU\ y de la Canasta Ampliada Rural (CAR) fue de
+Q.\CAR\, y en su cálculo se ha utilizado el coeficiente de Orshansky para el
+área urbana (2.421) y para el área rural (1.968) según los resultados de la
+ENIGH 2022-2023.
+\\[\baselineskip]
+Con esta publicación, el INE continúa su esfuerzo por brindar información
+oportuna y de acceso a la población, modernizando el Sistema de Precios que este
+gestiona.
+Los documentos base y otras series históricas pueden ser consultados en el sitio
+de internet del INE.
+Cualquier comentario puede dirigirse a
+\href{mailto:comunicacion@ine.gob.gt}{comunicacion@ine.gob.gt}.
+
+\newpage
+
+\;
+\section*{Canasta Básica Alimentaria (CBA)}
+
+La CBA es un conjunto de alimentos que constituyen un mínimo necesario para
+satisfacer al menos las necesidades energéticas y proteínicas de una persona;
+y que se ajustan al patrón cultural, capacidad adquisitiva y la disponibilidad y
+precios de los alimentos a nivel local.
+\\[2\baselineskip]
+La actualización de la CBA representa un cambio significativo en comparación con
+la última revisión realizada en el año 2020.
+Entre los cambios más destacados se encuentra la metodología utilizada, que
+ahora prioriza la obtención de la población de referencia a través de las
+carencias.
+Otro cambio importante implica la inclusión de los gastos relacionados con la
+comida y bebida fuera del hogar en el cálculo del costo de la CBA.
+Además, se modificó el método para determinar este costo, optando por precios
+medianos en lugar de precios promedio.
+También se segmentó la canasta en área urbana y rural.
+\\[\baselineskip]
+La CBAU contiene 66 productos y la CBAR 60, cuantifican los gramos sugeridos
+para un hogar de 4.16 miembros que cubren el requerimiento energético de 2,052
+calorías para la CBAU y 4.80 miembros y 2,172 calorías para la CBAR.
+En su formulación, la CBA sigue la metodología de gasto que observa los patrones
+de consumo efectivo, es decir no es una canasta con fines normativos, como
+ocurriera si fuese para fines dietéticos.
+\\[2\baselineskip]
+La CBAU y la CBAR implementada a partir de enero del 2024, está integrada por 14
+grupos alimenticios, excluyendo el 12 que identifica Bebidas alcohólicas.
+Los 13 restantes identifican 66 productos alimenticios para la CBAU y 60 para la
+CBAR.
+Posteriormente, su estructura, costo por grupo alimenticio y total, se muestran
+a continuación.
+
+\newpage
+
+{\begin{tabular}{l l}
+  Cuadro 1 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por grupo alimenticio Urbana* \\
+  & \Mes\ \anio
+\end{tabular}
+\\[\baselineskip]
+\renewcommand{\arraystretch}{1.5}
+{\color{black}\small \begin{tabular}{|c|l|r|r|r|r|r|}
+  \hline
+  \multirow{2}{4mm}{\bf No.} & \multirow{2}{48mm}{\bf Grupo Alimenticio} &
+    \multirow{2}{17mm}{\bf Kilocalorías por persona} &
+    \multirow{2}{16mm}{\bf Cantidad gramos mes} &
+    \multirow{2}{17mm}{\bf Costo mensual \mesant} &
+    \multirow{2}{17mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+  & & & & & & \multicolumn{1}{c|}{\bf\%} \\ \hline
+  \GruposU
+  \multicolumn{4}{|c|}{\bf Costo per cápita mensual} & \bf\CBAUant & \bf\CBAU &
+    \bf\VarU \\
+\hline
+\end{tabular}}}
+{\scriptsize
+\\[\baselineskip]
+Fuente: Elaboración INE\\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+}
+
+\newpage
+
+\begin{tabular}{l l}
+  Cuadro 2 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por producto Urbana* \\
+  & \Mes\ \anio
+\end{tabular}
+\renewcommand{\arraystretch}{1.25}
+{\scriptsize{\color{black} \begin{longtable}{|c|l|r|r|r|r|r|}
+  \hline
+  \multirow{3}{2mm}{\bf No.} & \multirow{3}{79mm}{\bf Producto} &
+    \multirow{3}{12mm}{\bf Kilocalorías por persona} &
+    \multirow{3}{9mm}{\bf Cantidad gramos mes} &
+    \multirow{3}{11mm}{\bf Costo mensual \mesant} &
+    \multirow{3}{11mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+    & & & & & & \multicolumn{1}{c|}{\bf\%} \\
+    & & & & & & \\ \hline
+  \endfirsthead
+  \hline
+  \multirow{3}{2mm}{\bf No.} & \multirow{3}{79mm}{\bf Producto} &
+    \multirow{3}{12mm}{\bf Kilocalorías por persona} &
+    \multirow{3}{9mm}{\bf Cantidad gramos mes} &
+    \multirow{3}{11mm}{\bf Costo mensual \mesant} &
+    \multirow{3}{11mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+    & & & & & & \multicolumn{1}{c|}{\bf\%} \\
+    & & & & & & \\ \hline
+  \endhead
+  \ProdsU
+  \multicolumn{4}{|c|}{\bf Costo per cápita mensual} & \bf\CBAUant & \bf\CBAU &
+  \\ \hline
+\end{longtable}
+}\;
+\begin{spacing}{1}
+Fuente: Elaboración INE\\
+{\tiny 1/} Se refiere a los productos definidos en la CBAU, para efectos de la
+consignación de precios se han especificado algunos casos de la forma siguiente:
+cereales de bolsa o caja solo se consideró las hojuelas de maíz simple, en
+fideos se cotiza cabello de ángel, coditos, conchitas, corbatín y tornillos,
+para las salchicha se cotiza solo las de pollo y cerdo, para el jamón se cotiza
+la variedad de pollo, para las longanizas y chorizos se cotiza los artesanales,
+para el cilantro, perejil y hierbabuena se cotiza solo cilantro y hierbabuena,
+para los frijoles negros secos se cotiza solo la variedad frijoles negros secos
+a granel, bases para sopa se cotiza solo la sopa con fideos o arroz, café
+instantáneo se cotiza solo la variedad en frasco, agua purificada se cotiza la
+variedad en bolsa o botella, para las gaseosas se cotiza las gaseosas familiares
+(litro o más).
+{\tiny 2/} La cantidad en gramos corresponde a la establecida en los estudios de
+canasta de referencia.  En \mes, conforme la metodología indicada. \\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+\end{spacing}
+}
+
+\newpage
+
+{\begin{tabular}{l l}
+  Cuadro 3 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por grupo alimenticio Rural* \\
+  & \Mes\ \anio
+\end{tabular}
+\\[\baselineskip]
+\renewcommand{\arraystretch}{1.5}
+{\color{black}\small \begin{tabular}{|c|l|r|r|r|r|r|}
+  \hline
+  \multirow{2}{4mm}{\bf No.} & \multirow{2}{48mm}{\bf Grupo Alimenticio} &
+    \multirow{2}{17mm}{\bf Kilocalorías por persona} &
+    \multirow{2}{16mm}{\bf Cantidad gramos mes} &
+    \multirow{2}{17mm}{\bf Costo mensual \mesant} &
+    \multirow{2}{17mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+  & & & & & & \multicolumn{1}{c|}{\bf\%} \\ \hline
+  \GruposR
+  \multicolumn{4}{|c|}{\bf Costo per cápita mensual} & \bf\CBARant & \bf\CBAR &
+    \bf\VarR \\
+\hline
+\end{tabular}}}
+{\scriptsize
+\\[\baselineskip]
+Fuente: Elaboración INE\\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+}
+
+\newpage
+
+\begin{tabular}{l l}
+  Cuadro 4 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por producto Rural* \\
+  & \Mes\ \anio
+\end{tabular}
+\renewcommand{\arraystretch}{1.25}
+{\scriptsize{\color{black} \begin{longtable}{|c|l|r|r|r|r|r|}
+  \hline
+  \multirow{3}{2mm}{\bf No.} & \multirow{3}{79mm}{\bf Producto} &
+    \multirow{3}{12mm}{\bf Kilocalorías por persona} &
+    \multirow{3}{9mm}{\bf Cantidad gramos mes} &
+    \multirow{3}{11mm}{\bf Costo mensual \mesant} &
+    \multirow{3}{11mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+    & & & & & & \multicolumn{1}{c|}{\bf\%} \\
+    & & & & & & \\ \hline
+  \endfirsthead
+  \hline
+  \multirow{3}{2mm}{\bf No.} & \multirow{3}{79mm}{\bf Producto} &
+    \multirow{3}{12mm}{\bf Kilocalorías por persona} &
+    \multirow{3}{9mm}{\bf Cantidad gramos mes} &
+    \multirow{3}{11mm}{\bf Costo mensual \mesant} &
+    \multirow{3}{11mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} \\
+    & & & & & & \multicolumn{1}{c|}{\bf\%} \\
+    & & & & & & \\ \hline
+  \endhead
+  \ProdsR
+  \multicolumn{4}{|c|}{\bf Costo per cápita mensual} & \bf\CBARant & \bf\CBAR &
+  \\ \hline
+\end{longtable}
+}\;
+\begin{spacing}{1}
+Fuente: Elaboración INE\\
+{\tiny 1/} Se refiere a los productos definidos en la CBAR, para efectos de la
+consignación de precios se han especificado algunos casos de la forma siguiente:
+cereales de bolsa o caja solo se consideró las hojuelas de maíz simple, en
+fideos se cotiza cabello de ángel, coditos, conchitas, corbatín y tornillos,
+para las salchicha se cotiza solo las de pollo y cerdo, para el jamón se cotiza
+la variedad de pollo, para las longanizas y chorizos se cotiza los artesanales,
+para el cilantro, perejil y hierbabuena se cotiza solo cilantro y hierbabuena,
+para los frijoles negros secos se cotiza solo la variedad frijoles negros secos
+a granel, bases para sopa se cotiza solo la sopa con fideos o arroz, café
+instantáneo se cotiza solo la variedad en frasco, agua purificada se cotiza la
+variedad en bolsa o botella, para las gaseosas se cotiza las gaseosas familiares
+(litro o más).
+{\tiny 2/} La cantidad en gramos corresponde a la establecida en los estudios de
+canasta de referencia.  En \mes, conforme la metodología indicada. \\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+\end{spacing}
+}
+
+\newpage
+
+\section*{Metodología CBA}
+
+Para obtener la Canasta Básica Alimentaria se aplicó la metodología propuesta
+por CEPALPROGRESANSICA (2021), que representa varios cambios en la forma de
+establecer los productos de dicha canasta, entre ellos se puede mencionar la
+selección de la población de referencia, el uso de un deflactor geográfico, la
+metodología de cálculo, etc.
+
+\subsection{Definición del deflactor geográfico}
+
+El deflactor geográfico es un índice utilizado para corregir posibles
+disparidades de poder adquisitivo entre áreas geográficas dentro de un país,
+asegurando que los hogares seleccionados tengan un nivel de vida comparable.
+En Guatemala, dado que el Índice de Precios al Consumidor (IPC) se calcula sólo
+a nivel urbano, se utiliza la Encuesta Nacional de Ingresos y Gastos de los
+Hogares (ENIGH) 2022-2023 para su cálculo.
+\\[\baselineskip]
+Este proceso implicó la mensualización y expansión de los gastos diarios, la
+agrupación de datos por hogar y producto, la generación de precios por producto
+a nivel nacional, y la exclusión de productos extremos.
+Luego, se generan precios medios y medianos por área geográfica, y se
+identifican los alimentos comunes a zonas urbanas y rurales para ajustar el
+gasto urbano.
+El deflactor resultante fue de 0.925, indicando una diferencia de poder
+adquisitivo entre áreas urbanas y rurales.
+
+\subsection{Población de referencia}
+
+Este método utiliza una forma de medir la pobreza llamada "Método de las
+Necesidades Básicas Insatisfechas" (NBI).
+Básicamente, lo que hace es evaluar si los hogares tienen carencias en ciertos
+aspectos importantes de la vida, como servicios básicos (Fuentes de agua
+mejorada, saneamiento mejorado), educación, alimentación (ingesta calórica,
+participación del gasto en alimentos respecto del gasto total) o vivienda adecuada.
+Si un hogar no cumple con al menos dos de estos aspectos, se considera como carente.
+\\[\baselineskip]
+Para seleccionar qué hogares formarán parte del estudio, primero se ordenan
+según sus ingresos, es decir, cuánto dinero tiene.
+Luego, se distribuyen en grupos de 20\% (quintiles móviles), donde el primer
+grupo incluye a los hogares más pobres y el último a los más ricos.
+Se selecciona el grupo donde por lo menos el 10\% de los hogares tiene al menos
+dos carencias, lo que indica una situación de pobreza.
+
+\newpage
+
+\subsection{Selección de los productos}
+
+De la población de referencia seleccionada se obtuvo una lista de los alimentos
+que suelen consumir, a este listado se le llama lista larga, en la que se
+determinó un total de 411 alimentos del área urbana y 386 del área rural
+divididos en 14 grupos alimenticios.
+\\[\baselineskip]
+De esta lista inicial se obtuvieron dos listas cortas de alimentos que reflejan
+los hábitos de consumo de la población en áreas urbanas y rurales, en donde se
+seleccionaron aquellos que son más comunes y que son importantes para mantener
+una dieta básica.
+En esta lista se incluyeron los alimentos comprados fuera del hogar.
+\\[\baselineskip]
+La lista de alimentos incluye al menos dos opciones de cada grupo alimentario y
+cada alimento está identificado claramente por su nombre. Se eligieron alimentos
+que son consumidos por al menos el 10\% de los hogares, resultando en listas de
+66 alimentos para el área urbana y 60 para el área rural.
+
+\subsection{Cálculo de los costos de la CBA}
+
+Para determinar el costo de la Canasta Básica de Alimentos (CBA), se utilizaron
+los precios recopilados en el mes de \mes\ de \anio\ para el IPC base
+diciembre de 2023.
+Estos precios fueron sometidos a varios tratamientos estadísticos para eliminar
+los valores atípicos.
+Luego, se obtuvo el precio mediano, de acuerdo con la recomendación presentada
+en la metodología actualizada por CEPAL en 2018 sobre la Medición de la Pobreza
+por Ingresos.
+Posteriormente, se aplicó la fórmula CMF (Costo Monetario de Adquisición de la
+CBA por Fórmula en el mes), utilizada para calcular el costo total de adquirir
+la CBA para un mes específico.
+\\[\baselineskip]
+En esta fórmula, cada producto individual que forma parte de la CBA tiene un
+precio mediano observado (PMei), que refleja su costo en el mercado. Además, se
+considera la cantidad diaria recomendada para el consumo de cada producto
+(GFDi), medida en gramos, para satisfacer las necesidades nutricionales.
+Para calcular el costo total de la CBA, se multiplica el precio mediano de cada
+producto por la cantidad diaria recomendada, y luego se suman estos costos para
+todos los productos de la CBA.
+Por último, este total se multiplica por el número promedio de días en un mes
+(30) para obtener el costo total estimado de adquirir la CBA durante ese
+período.
+
+\section*{Canasta Ampliada (CA)}
+
+La Canasta Ampliada (CA) se define como el conjunto de bienes y servicios que
+satisfacen las necesidades ampliadas de los miembros de un hogar y conforme los
+datos declarados por los hogares, incluye alimentación, Bebidas alcohólicas,
+ropa y calzado, vivienda, mobiliario, salud, transporte, comunicaciones,
+recreación y cultura, educación, restaurantes y hoteles, servicios financieros y
+cuidado personal. 
+
+\section*{Canasta Ampliada Urbana (CAU)}
+
+El cálculo de la CAU se obtiene por medio de un coeficiente, específicamente se
+multiplica el costo per cápita mensual de la CBAU por el coeficiente de
+Orshansky (2.421) con relación al gasto total en bienes y servicios, de acuerdo
+con los resultados de la ENIGH 2022-2023.
+
+{\color{AzulAcento} \[CCAU = CT\ CBAU \times 2.421\]}
+
+Donde:
+
+\begin{tabular}{r c l}
+  CCAU & = & Costo de la Canasta Ampliada Urbana \\
+  CT CCAU & = & Costo total mensual de la CBA Urbana
+\end{tabular}
+\\[\baselineskip]
+Dado el costo per cápita mensual de la CBAU de Q.\CBAU, el costo de la CAU per
+cápita mensual es de Q.\CAU\ a \mes\ del \anio.
+
+\section*{Canasta Ampliada Rural (CAR)}
+
+El cálculo de la CAR se obtiene por medio de un coeficiente, específicamente se
+multiplica el costo per cápita mensual de la CBAR por el coeficiente de
+Orshansky (1.968) con relación al gasto total en bienes y servicios, de acuerdo
+con los resultados de la ENIGH 2022-2023.
+
+{\color{AzulAcento} \[CCAR = CT\ CBAR \times 1.968\]}
+
+Donde:
+
+\begin{tabular}{r c l}
+  CCAR & = & Costo de la Canasta Ampliada Rural \\
+  CT CCAR & = & Costo total mensual de la CBA Rural
+\end{tabular}
+\\[\baselineskip]
+Dado el costo per cápita mensual de la CBAU de Q.\CBAU, el costo de la CAU per
+Dado el costo per cápita mensual de la CBAR de Q.\CBAR, el costo de la CAR per
+cápita mensual es de Q.\CAR\ a \mes\ del \anio.
+
+\includepdf[
+  pagecommand={\thispagestyle{empty}}
+]{./contraportada.pdf}
+
+\end{document}
