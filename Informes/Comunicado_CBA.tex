@@ -1,0 +1,195 @@
+\documentclass[letterpaper, twoside]{article}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\setmainfont{Montserrat}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{enumitem}
+\setlength{\headheight}{14.5pt}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{tikzpagenodes}
+\usepackage{xcolor}
+\definecolor{AzulTexto}{RGB}{0, 32, 96}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{setspace}
+
+\fancyhf{} % Pone en blanco el encabezado y pie de página
+
+\fancyhead[E]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      inner sep=0pt,outer sep=0pt,anchor=north west
+    ] at (current page.north west) {
+      \includegraphics[width=\paperwidth]{topeven.pdf}
+    };
+  \end{tikzpicture}
+}
+\fancyhead[O]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      inner sep=0pt,outer sep=0pt,anchor=north west
+    ] at (current page.north west) {
+      \includegraphics[width=\paperwidth]{topodd.pdf}
+    };
+  \end{tikzpicture}
+}
+
+\fancyfoot[C]{\ \includegraphics{Pie_de_pagina.jpg}\ }
+
+% MÁRGENES
+\marginsize{85pt}%izquierda
+{85pt} %derecha
+{105pt} %arriba
+{40pt} %abajo
+
+% Sin sangría
+\setlength{\parindent}{0pt}
+
+%Esto evita que las palabras se dividan con guión.
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\input{macros}
+
+\begin{document}
+\setlength{\footskip}{49pt}
+\color{AzulTexto}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      yshift=-60pt, xshift=10pt,anchor=north west
+    ] at (current page.north west) {
+      \includegraphics{Comunicado_De_Prensa.jpg}
+    };
+    \node[
+      yshift=-98pt, xshift=20pt,anchor=north west
+    ] at (current page.north west) {
+      \footnotesize No. CBA-\nMes-\anio
+    };
+  \end{tikzpicture}
+
+\;
+\\[\baselineskip]
+\begin{center}
+{\bf\large El INE da a conocer el costo mensual per cápita a \mes\ del \anio \\
+  de la Canasta Básica Alimentaria Urbana y Rural}
+\end{center}
+\;
+\\[\baselineskip]
+Guatemala, \diapub\ de \mespub\ de \aniopub. El Instituto Nacional de Estadística
+(INE), presenta resultados de la Canasta Básica Alimentaria Urbana (CBAU) y
+Canasta Básica Alimentaria Rural (CBAR), además la Canasta Ampliada Urbana (CAU)
+y Canasta Ampliada Rural (CAR) al mes de \mes\ del \anio.
+\\[\baselineskip]
+La CBAU y la CBAR implementada a partir de enero del 2024, está integrada por 14
+grupos alimenticios, excluyendo el 12 que identifica Bebidas alcohólicas.
+El costo de adquisición per cápita mensual de la CBAU al mes de \mes\ del \anio\
+fue de Q \CBAU\ y para la CBAR fue de Q \CBAR\ conforme a la metodología que se
+indica, su estructura, costo por grupo alimenticio y total, se muestran en la
+página siguiente en los cuadros 1 y 2 respectivamente.
+
+\setcounter{section}{1}
+\subsection{Acerca de la CBA y CA}
+
+La Canasta Básica Alimentaria (CBA) es el "Mínimo alimentario conformado por un
+conjunto de alimentos básicos, en cantidades apropiadas y suficientes para
+satisfacer por lo menos las necesidades energéticas y proteínicas de la familia
+u hogar de referencia"(Menchú y Osegueda, 2002).
+\\[\baselineskip]
+La CBAU contiene 66 productos y la CBAR 60, cuantifican los gramos sugeridos
+para una persona promedio y que cubren el requerimiento energético de 2,052
+calorías para la CBAU y 2,172 calorías para la CBAR.
+En su formulación, la CBA sigue la metodología de gasto que observa los patrones
+de consumo efectivo, es decir no es una canasta con fines normativos, como
+ocurriera si fuese para fines dietéticos.
+
+\newpage
+
+\begin{tabular}{l l}
+  Cuadro 1 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por grupo alimenticio Urbana* \\
+  & \Mes\ \anio
+\end{tabular}
+\\[\baselineskip]
+{\renewcommand{\arraystretch}{1.5}
+\color{black} \begin{tabular}{|c|l|r|r|r|r|c|}
+  \hline
+  \multirow{2}{4mm}{\bf No.} & \multirow{2}{48mm}{\bf Grupo Alimenticio} &
+    \multirow{2}{16mm}{\bf Cantidad gramos mes} &
+    \multirow{2}{17mm}{\bf Costo mensual \mesant} &
+    \multirow{2}{17mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} & \\
+  & & & & & \multicolumn{1}{c|}{\bf\%} & \\ \hline
+  \GruposComU
+  \multicolumn{3}{|c|}{\bf Costo per cápita mensual} & \bf\CBAUant & \bf\CBAU &
+    \bf\VarU & \SignoU \\
+\hline
+\end{tabular}}
+{\scriptsize
+\\[\baselineskip]
+Fuente: Elaboración INE\\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+}
+
+\newpage
+
+\begin{tabular}{l l}
+  Cuadro 2 & Canasta Básica Alimentaria \\
+  & Costo mensual per cápita por grupo alimenticio Rural* \\
+  & \Mes\ \anio
+\end{tabular}
+\\[\baselineskip]
+{\renewcommand{\arraystretch}{1.5}
+\color{black} \begin{tabular}{|c|l|r|r|r|r|c|}
+  \hline
+  \multirow{2}{4mm}{\bf No.} & \multirow{2}{48mm}{\bf Grupo Alimenticio} &
+    \multirow{2}{16mm}{\bf Cantidad gramos mes} &
+    \multirow{2}{17mm}{\bf Costo mensual \mesant} &
+    \multirow{2}{17mm}{\bf Costo mensual \mes} &
+    \multicolumn{1}{c|}{\bf Variación} & \\
+  & & & & & \multicolumn{1}{c|}{\bf\%} & \\ \hline
+  \GruposComR
+  \multicolumn{3}{|c|}{\bf Costo per cápita mensual} & \bf\CBARant & \bf\CBAR &
+    \bf\VarR & \SignoR \\
+\hline
+\end{tabular}}
+{\scriptsize
+\\[\baselineskip]
+Fuente: Elaboración INE\\
+{*} El sistema calcula los valores a 16 cifras decimales. Se aproximan a dos
+decimales.
+}
+
+\newpage
+
+La Canasta Ampliada (CA) se define como el conjunto de bienes y servicios que
+satisfacen las necesidades ampliadas de los miembros de un hogar y conforme los
+datos declarados por los hogares, incluye alimentación, bebidas alcohólicas,
+ropa y calzado, vivienda, mobiliario, salud, transporte, comunicaciones,
+recreación y cultura, educación, restaurantes y hoteles, servicios financieros y
+cuidado personal. 
+\\[\baselineskip]
+El costo de adquisición de la CAU per cápita mensual a \mes\ del \anio\ fue de
+Q.\CAU\ y el costo de la CAR fue de Q.\CAR, en su cálculo se ha empleado el
+coeficiente de Orshansky de 2.421 para la CAU, y 1.968 para la CAR, resultado de
+la ENIGH 2022-2023.
+\\[\baselineskip]
+Con esta publicación el INE continúa su esfuerzo por brindar información
+oportuna y de acceso a la población, modernizando el Sistema Integral de Precios
+(SIP) que este gestiona. 
+\\[\baselineskip]
+Los documentos base y otras series históricas pueden ser consultados en el sitio
+de internet del INE: \href{http://www.ine.gob.gt}{www.ine.gob.gt}.
+\end{document}
